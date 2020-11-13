@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang = "ja">
+ <head>
+ <meta charset ="UTF-8">
+ <title>料理屋　松</title>
+ <meta name = "viewport" content = "width = device-width,intial-scale = 1">
+ <link rel="stylesheet" href = "css/styless.css">
+ <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+</head>
+<body>
+  <div id="app">
+         <div class="hamburger_btn" v-on:click='ActiveBtn=!ActiveBtn'> 
+           <span class="line line_01" v-bind:class="{'btn_line01':ActiveBtn}"></span> 
+           <span class="line line_02" v-bind:class="{'btn_line02':ActiveBtn}"></span> 
+           <span class="line line_03" v-bind:class="{'btn_line03':ActiveBtn}"></span>
+
+        </div> 
+       <!--サイドメニュー--> 
+       <transition name="menu"> 
+         <div class="menu" v-show="ActiveBtn"> 
+             <ul> 
+                <li><a href="index.html">トップページ</a></li> 
+                <li><a href="#infotop">お知らせ</a></li> 
+                <li><a href="#matutop">料理屋 松について</a></li> 
+                <li><a href="#foodtop">お品書き</a></li> 
+                <li><a href="#tenpotop">店舗のご案内</a></li> 
+                <li><a href="#jobtop">求人情報</a></li> 
+                <br>
+                <li><a href="info.html">087-813-4447</a></li>       
+             </ul> 
+        </div> 
+      </transition> 
+    <div class="header">
+      <div class="logo">
+        <a href="index.html"> <img src="images/logo.png"></a>
+       </div>
+       <div class="tel2"><img src="images/tel6.png"></div>
+    </div>
+       <main>
+        <component v-bind:is="currentBanner" />
+        <p>Heeko</p>
+      </main>
+      <main2>
+  
+        <div class="matutop" id="matutop">
+            <p class="matutitle" >料理屋　松について</p>           
+            <p　class="matucontext">
+              &emsp; 店主松原秀樹は、ミシュランガイドで六年連続、星を獲得した神戸の「料理屋 植むら」の立ち上げから参加し、修行を積んだ日本料理人です。
+              2012年に生まれ育った地元の香川県高松市に「料理屋 松」をオープンさせました。地元の食材はもちろん、様々な地方の食材を使い四季折々の日本料理を日々ご提供させて頂いております。
+            </p>
+        </div>
+        <img class = "top2" src="images/kanban.jpg">
+        <div class="infotop" id="infotop">
+            <p class="infotitle">お知らせ</p> 
+            <p　class="infocontent">
+              <p>2020.09</p>
+              <p class="newstitle">◆ホームページ更新</p>
+            </p>
+           
+        </div>
+        <div class="foodtop" id="foodtop">
+          <p class="foodtitle">お品書き</p>  
+          <div class="foodcontent">
+              <div class="foodcontent1">
+              　<p class="f1">昼のコース</p>
+              　<p class="f2">現在お昼のコースはお休みさせて頂いております。</p>
+              </div>
+              <div　class="foodcontent2">
+                <p class="f1">夜のコース</p>
+              　<p class="f2">◆お一人様　10,000円<br>(別途サービス料10%・税別)</p>
+              　<p class="f2">◆お一人様　13,000円<br>(別途サービス料10%・税別)</p>
+              </div>   
+          </div>         
+          <div class="foodgallaly">
+              <div class="food1">
+                <img  src="images/uni7.png">
+              </div>
+              <div class="food2">
+                <img  src="images/ikura7.png">
+              </div>
+          </div>
+          <div class="foodgallaly">
+              <div class="food1">
+                <img  src="images/food1.jpg">
+              </div>
+              <div class="food2">
+                <img  src="images/food2.jpg">
+              </div>
+          </div>
+          <div class="foodgallaly">
+              <div class="food3">
+                <img  src="images/food3s.jpg">
+              </div>   
+              <div class="food4">
+                <img  src="images/food4t.jpg">
+              </div>
+          </div> 
+          <div class="foodgallaly">
+            <div class="food5">
+              <img  src="images/budou7.png">
+            </div>
+            <div class="food6">
+              <img  src="images/glass7.png">
+            </div>                
+          </div>
+          
+         
+        </div>
+
+       
+        
+
+      <img class = "ten" src="images/zaseki.jpg">
+      <div class="tenpotop" id="tenpotop">
+        <p class="matutitle">店舗情報</p>           
+        <p　class="matucontext">
+          店舗名	料理屋 松<br>
+          電話番号	087-813-4447<br>
+          住所	〒760-0048 香川県高松市福田町7−1<br>
+          営業時間	18：00〜23：00<br>
+          定休日	不定休<br>
+          席数	カウンター：6席　テーブル：2席（4名まで）
+        </p>
+        <img class = "top2" src="images/map.png">
+    </div>
+      
+
+
+
+      <img class = "top2" src="images/top.jpg">
+      <div class="jobtop" id="jobtop">
+        <p class="jobtitle">求人情報</p>           
+        <p　class="matucontext">
+          「料理屋 松」では、料理人になりたいと志している人を募集しています。<br>
+           経験・未経験問いません。共に日本の文化である日本料理を高松で広めませんか？<br>
+          弊店で働きたいと思う方は、下記の連絡先までまずはお電話下さい。<br>
+
+        </p>
+    </div>
+
+
+      </main2>
+      
+       <footer>
+         <p>&copy;Copyright 料理屋　松.ALL right reserved.</P>
+     　</footer>
+   
+     </div>
+        
+      
+  </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
